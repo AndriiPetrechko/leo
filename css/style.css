@@ -1,0 +1,41 @@
+@font-face {
+    font-family: MrsEavesItalic; 
+    src: url(../fonts/MrsEavesItalic.otf); 
+   }
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.header_inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.logo{
+    font-family: MrsEavesItalic;
+    font-size: 120px;
+    color: #c4cccf;
+}
+.navbar{
+    margin: 55px 45px;
+}
+.nav_item{
+    padding-left: 50px;
+}
+.navbar ul li{
+    display: inline;
+}
+.navbar ul li{
+    list-style: none;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #c4cccf;
+    font-size: 24px;
+}
