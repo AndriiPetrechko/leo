@@ -1,6 +1,6 @@
 @font-face {
     font-family: "MrsEavesItalic"; 
-    src: url(../fonts/MrsEavesItalic.otf); 
+    src: url("../fonts/MrsEavesItalic.otf"); 
 }
 @font-face {
     font-family: "SegoeUILight";
@@ -14,6 +14,11 @@
     font-style: normal;
     font-weight: bold;
 }
+@font-face {
+    font-family: "Univers-light-normal"; 
+    src: url("../fonts/Univers-light-normal.ttf"); 
+}
+
 
 
 *{
@@ -150,6 +155,78 @@ body{
 
 /* end style for banner */
 
+.burger_menu{
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 40px;
+    cursor: pointer;
+    z-index: 20;
+}
+.line{
+    width: 60px;
+    height: 3px;
+    background-color: #fff;
+    transition: all .8s;
+}
+.line::before{
+    display: block;
+    content: "";
+    width: 60px;
+    height: 3px;
+    background-color: #fff;
+    transform: translateY(-13px);
+    transition: all .7s;
+}
+.line::after{
+    display: block;
+    content: "";
+    width: 60px;
+    height: 3px;
+    background-color: #fff;
+    transform: translateY(10px);
+    transition: all .3s;
+}
+.burger_active .line::before{
+    transform: translateY(1px) rotate(45deg);
+}
+.burger_active .line::after{
+    transform: translateY(-1px) rotate(-45deg);
+}
+.burger_active .line{
+    background-color: transparent;
+}
+@media screen and (max-width:1024px){
+    .burger_menu{
+        display: block;
+    }
+}
+
+.collapse_menu{
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50%;
+}
+.collapse_menu_active{
+    background-color: #191967;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 15;
+}
+.collapse_menu ul{
+    list-style: none;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.collapse_menu ul li a{
+    color: #fff;
+    font-size: 90px;
+    text-decoration: none;
+}
+
 /* style for section tabs */
 .tabs{
     width: 100%;
@@ -161,6 +238,7 @@ body{
     justify-content: space-between;
 
     margin-top: 80px;
+    width: 100%;
 }
 .tab_item{
     text-align: center;
@@ -202,6 +280,8 @@ body{
 .tab_content_active{
     width: 100%;
     display: block;
+    border: 3px solid #d6d6d6;
+    border-top: none;
 }
 .tab_content_img{
     width: 60%;
@@ -209,15 +289,102 @@ body{
     padding: 70px 70px;
 }
 .tab_content_title{
-    color: #727171;
+    color: #4f4f4f;
     font-size: 38px;
     font-family: "SegoeUILight";
     padding-left: 50px;
 }
 .tab_content_text{
     color: #727171;
-    font-size: 14px;
+    font-size: 16px;
     font-family: "SegoeUILight";
-    padding-top: 30px;
-    padding-left: 50px;
+    padding: 30px 20px 70px 50px;
+    line-height: 30px;
+}
+
+
+/* style for choose us */
+.choose_us{
+    width: 100%;
+    border-bottom: 2px solid #d6d6d6;
+}
+.choose_inner{
+    margin-top: 30px;
+    margin-bottom: 70px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.choose_item{
+    width: 50%;
+}
+@media screen and (max-width:1024px){
+    .choose_inner{
+        flex-wrap: wrap-reverse;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .choose_item{
+        width: 75%;
+    }
+    .choose_item img{
+        width: 100%;
+    }
+}
+
+.choose_title{
+    color: #4f4f4f;
+    font-size: 32px;
+    font-family: "SegoeUILight";
+}
+.choose_text ul{
+    list-style-image: url(../img/check.png);
+}
+.choose_text ul li{
+    color: #8a8888;
+    padding-top: 25px;
+    font-family: "Univers-light-normal"; 
+}
+.choose_text ul li:last-child{
+    padding-bottom: 35px;
+}
+
+
+/* footer style*/
+.footer{
+    width: 100%;
+    background-color: #2d2a29;
+}
+.footer_inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footer_item{
+    padding: 30px 20px 50px 45px;
+}
+.footer_item_title{
+    color: #fff;
+    font-size: 26px;
+    font-family: "SegoeUILight";
+    padding-bottom: 15px;
+}
+.footer_item_content ul{
+    list-style: none;
+}
+.footer_item_content ul li{
+    color: #aaacac;
+    font-size: 13px;
+    padding-bottom: 12px;
+}
+.footer_logo{
+    color: #58565d;
+    font-size: 118px;
+}
+
+@media screen and (max-width:1024px){
+    .footer_inner{
+        flex-wrap: wrap;
+    }
 }
